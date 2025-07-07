@@ -1,58 +1,53 @@
-# Bookmark Cleaner — Phase II Build (v0.9)
+Bookmark Cleaner — Phase II Build (v0.9)
+A client-side JavaScript tool to parse, scan, and analyze exported browser bookmark files for dead or unreachable links.
 
-A JavaScript-based Bookmark Cleaner tool designed to parse, scan, and analyze exported bookmark files for dead links.
+🔧 Features
+Upload exported .html bookmark files from browsers
 
-This version parses a standard browser-exported bookmarks HTML file, scans each URL using fetch requests, and outputs the link status directly into the browser.
+Parse and extract all URLs using native browser APIs
 
----
+Asynchronously scan each link via fetch requests
 
-## 🔧 Features
+Display link status inline with:
 
-- ✅ Upload browser-exported `.html` bookmark file
-- ✅ Automatically parses and extracts all bookmark URLs
-- ✅ Scans each link asynchronously
-- ✅ Reports:
-  - "Possibly Alive (No CORS)" — Browser was unable to verify due to cross-origin restrictions
-  - "Dead" — Site unreachable
-- ✅ Clean user interface
-- ✅ Fully client-side — no server or external processing required
+Possibly Alive (No CORS): Unable to verify due to browser cross-origin restrictions
 
----
+Dead: Site unreachable or fetch failed
 
-## 🔬 Technologies Used
+Clean, minimal user interface
 
-- HTML5
-- Vanilla JavaScript (async / await)
-- FileReader API
-- DOMParser API
-- Fetch API
+Fully client-side — no data sent externally
 
----
+🔬 Technologies Used
+HTML5, Vanilla JavaScript with async/await
 
-## 🚩 Current Limitations
+FileReader API for reading local files
 
-- Browser CORS policy blocks full HTTP status detection on many external domains (displayed as "Possibly Alive (No CORS)")
-- No automatic deletion or export yet (coming in v1 Enterprise build)
-- Large bookmark files may trigger antivirus software due to rapid outbound URL requests (batching logic coming soon)
+DOMParser API to parse bookmark HTML structure
 
----
+Fetch API for URL status checks
 
-## 💡 Roadmap (Planned in Enterprise Build v1)
+🚩 Current Limitations
+Browser CORS policies prevent definitive status checks on many domains (shown as “Possibly Alive (No CORS)”)
 
-- ✅ Batch scanning for better performance and safety
-- ✅ Auto-delete dead and No-CORS links
-- ✅ Export cleaned bookmarks as new HTML file
-- ✅ Error logging & reporting
-- ✅ Production-grade deployment structure
+No automated deletion or export features yet (planned for future versions)
 
----
+Large bookmark files may trigger antivirus due to many rapid fetch requests — batching to be implemented
 
-## 🔒 Data Privacy
+💡 Roadmap (Enterprise Build v1)
+Batch processing for safer, performant scans
 
-This tool runs fully in your browser.  
-No data is sent to any server.  
-Your bookmark file remains entirely local.
+Automated deletion of dead and No-CORS links
 
+Export cleaned bookmarks as a new HTML file
+
+Detailed error logging and user reporting
+
+Production-ready deployment and UI enhancements
+
+🔒 Data Privacy
+All processing runs entirely in your browser.
+No data is uploaded or transmitted — your bookmarks stay private and local.
 ---
 
 ## 🔨 Author
